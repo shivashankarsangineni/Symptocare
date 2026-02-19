@@ -1,0 +1,121 @@
+/* static/style.css */
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#0f4c81;
+  --accent-2:#0c356a;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --bg1:#e9f6ff;
+  --bg2:#f3f4f6;
+}
+
+/* Body */
+body{
+  font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  color:#0b1220;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Container */
+.container{
+  max-width:1100px;
+  margin:36px auto;
+  padding:20px;
+}
+
+/* Header */
+.topbar{text-align:center;margin-bottom:20px}
+h1{font-size:2.2rem;color:var(--accent);letter-spacing:0.2px}
+.subtitle{color:var(--muted);margin-top:6px}
+
+/* Grid layout */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 8px 30px rgba(15,76,129,0.06);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,76,129,0.08)}
+.card h2{color:var(--accent);margin-bottom:10px}
+
+/* Inputs */
+textarea, input[type="text"], input[type="search"]{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #e6eef8;
+  font-size:1rem;
+  margin-top:8px;
+}
+textarea{min-height:90px;resize:vertical}
+input:focus, textarea:focus{outline:none;border-color:var(--accent)}
+
+/* Row */
+.row{display:flex;gap:8px;margin-top:12px}
+button{
+  background:var(--accent);
+  color:#fff;border:none;padding:10px 14px;border-radius:10px;
+  cursor:pointer;font-weight:600;
+  transition:transform .12s ease,background .12s ease;
+}
+button:hover{transform:translateY(-2px);background:var(--accent-2)}
+button:active{transform:translateY(0)}
+
+/* Result + history + hospitals */
+.result, .history, .chat_out{
+  margin-top:12px;
+  border-radius:10px;
+  padding:12px;
+  background:#fcfeff;
+  border:1px solid #eef6ff;
+  box-shadow:0 6px 18px rgba(12,53,106,0.03);
+}
+
+/* Prediction list */
+.pred-list{list-style:none;padding:0;margin:10px 0}
+.pred-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px;border-radius:8px;margin-bottom:8px;
+  background:linear-gradient(90deg,#ffffff,#f8fbff);
+  border:1px solid #eef6ff;
+}
+.pred-item .label{font-weight:700}
+.pred-item .prob{color:var(--muted)}
+
+/* Advice */
+.advice{margin-top:10px;font-style:italic;color:var(--accent)}
+
+/* History entries */
+.history-item{padding:10px;border-radius:8px;margin-bottom:8px;background:#fbfdff;border-left:4px solid var(--accent)}
+.history-item a{font-size:0.9rem;color:var(--accent);text-decoration:none}
+
+/* Chat bubbles */
+.bubble{padding:10px 12px;border-radius:14px;display:inline-block;max-width:90%}
+.user{background:#e6f0ff;color:#06263b;border-radius:14px 14px 0 14px}
+.bot{background:#f2f7fb;color:#08304a;border-radius:14px 14px 14px 0;margin-bottom:8px}
+
+/* Footer */
+.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Spinner */
+.spinner{
+  width:32px;height:32px;border-radius:50%;
+  border:4px solid #e6f0ff;border-top-color:var(--accent);
+  animation:spin .9s linear infinite;margin:8px auto;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Responsive */
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+}

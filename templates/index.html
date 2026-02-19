@@ -1,0 +1,62 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Health Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <h1>Smart Health Assistant</h1>
+      <p class="subtitle">Preliminary predictions • Chat support • Reports</p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Predict Disease</h2>
+        <textarea id="symptoms" placeholder="Enter symptoms, e.g., fever, cough"></textarea>
+        <div class="row">
+          <button id="predictBtn">Predict</button>
+          <button id="voiceBtn">Start Mic</button>
+        </div>
+        <div id="result" class="result"></div>
+      </section>
+
+      <section class="card">
+        <h2>Chatbot</h2>
+        <input id="chat_input" placeholder="Ask health question" />
+        <div class="row">
+          <button id="chatBtn">Send</button>
+        </div>
+        <div id="chat_out" class="chat_out"></div>
+      </section>
+
+      <section class="card">
+        <h2>Find Hospitals</h2>
+        <input id="loc" placeholder="City or place name" />
+        <div class="row">
+          <button id="findBtn">Find</button>
+        </div>
+        <div id="hosp_out" class="result"></div>
+      </section>
+
+      <section class="card">
+        <h2>History & Reports</h2>
+        <div class="row">
+          <button id="loadHistBtn">Load History</button>
+        </div>
+        <div id="history" class="history"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Not a medical diagnosis. For emergencies contact local services.</small>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
